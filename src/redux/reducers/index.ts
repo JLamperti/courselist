@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import { courseList } from "./courseListReducer";
+import { courseListReducer } from "./courseListReducer";
+import { isLoadingDataReducer } from "./isLoadingDataReducer";
 
 export const combinedReducers = combineReducers({
-    courseList,
+    courseList: courseListReducer,
+    isLoadingData: isLoadingDataReducer,
 });

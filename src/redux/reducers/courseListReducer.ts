@@ -1,28 +1,36 @@
-import initialCourseListObject from "./courseList.json";
 import { actionTypes } from "../../actionTypes";
 
-type courseListStateType = Array<{
-    courseId: number;
-    courseName: string;
-    wishListFlag: boolean;
-}>;
+import { courseListType } from "../../types";
+
+import { setWishlistFlag } from "../actions";
 
 type actionType = {
     type: actionTypes;
+    courseId?: number;
+    courseList: courseListType;
+    isCourseWishedFor: boolean;
 };
 
-const { courseList: initialCourseList } = initialCourseListObject;
-
-export const courseList = (
-    state: courseListStateType = initialCourseList,
+export const courseListReducer = (
+    courseList: courseListType = [
+        // { courseName: "123", courseId: 123, wishlistFlag: true },
+    ],
     action: actionType
-) => {
+): courseListType => {
     switch (action.type) {
+        case actionTypes.STORE_DATA: {
+            console.log("storing data");
+            return action.courseList;
+        }
         case actionTypes.TOGGLE_WISHLIST_FLAG: {
-            return;
+            return setWishlistFlag({
+                courseList,
+                courseId: action.courseId,
+                isCourseWishedFor: action.isCourseWishedFor,
+            });
         }
         default: {
-            return state;
+            return courseList;
         }
     }
 };

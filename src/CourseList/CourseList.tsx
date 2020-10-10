@@ -1,31 +1,62 @@
 import React from "react";
-import { useSelector, useStore } from "react-redux";
 import { Course } from "./Course";
-import { Grid } from "@material-ui/core";
+import { Grid, List, ListItem, Typography } from "@material-ui/core";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
-export const CourseList: React.FC = () => {
-    const store = useStore();
+import { LoadingIndicator } from "./components/LoadingIndicator";
 
-    console.log(store.getState());
+import { courseListType, CourseType } from "../types";
 
-    const courseList = useSelector((state) => state.courseList);
+type courseListElementType = {
+    courseList: courseListType;
+    isLoading: boolean;
+};
 
-    return (
-        <>
-            <div className="App">
-                <header className="App-header">COURSELIST</header>
-            </div>
-            <Grid container spacing={3}>
-                {courseList.map(
-                    ({ courseId, ...restProps }: { courseId: number }) => (
-                        <Course
-                            key={courseId}
-                            courseId={courseId}
-                            {...restProps}
-                        />
-                    )
-                )}
-            </Grid>
-        </>
-    );
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        gridWrapper: {
+            flexGrow: 1,
+        },
+    })
+);
+
+export const CourseList: React.FC<courseListElementType> = ({
+    courseList,
+    isLoading,
+}) => {
+    if (isLoading) {
+        return <LoadingIndicator />;
+    } else {
+        const styles = useStyles();
+        return (
+            <>
+                <Typography variant="h2" align="center" gutterBottom>
+                    Courses
+                </Typography>
+
+                <div className={styles.gridWrapper}>
+                    <Grid container spacing={3}>
+                        {courseList.map(
+                            ({ courseId, ...restProps }: CourseType) => (
+                                <Course
+                                    key={courseId}
+                                    courseId={courseId}
+                                    {...restProps}
+                                />
+                            )
+                        )}
+                    </Grid>
+                </div>
+
+                <Typography variant="h2">TODOs</Typography>
+                <List>
+                    <ListItem>UI - more prettier</ListItem>
+                    <ListItem>UI - toggle icon</ListItem>
+                    <ListItem>test - fix wishlist toggle</ListItem>
+                    <ListItem>E2E wishlisting</ListItem>
+                    <ListItem>configure material UI</ListItem>
+                </List>
+            </>
+        );
+    }
 };
