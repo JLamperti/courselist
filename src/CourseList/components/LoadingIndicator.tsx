@@ -4,8 +4,8 @@ export const LoadingIndicator: React.FC = () => (
     <div className="course-list-centered-display">
         <CircularProgress color="secondary" />
         <Typography variant="h5" align="center">
-            The data loading is "async", so look at this pretty spinning circle
-            for a second :) <br />
+            The data loading is &quot;async&quot;, so look at this pretty
+            spinning circle for a second :) <br />
             (Uses a timeout to simulate async loading)
         </Typography>
     </div>

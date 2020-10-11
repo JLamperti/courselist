@@ -18,7 +18,6 @@ export const ToggleWishlistButton: React.FC<ToggleWishlistButtonType> = ({
 }) => {
     const dispatch = useDispatch();
     const toggleWishlist = (): void => {
-        console.log(`wlf: ${wishlistFlag}, id: ${courseId}`);
         dispatch({
             type: actionTypes.TOGGLE_WISHLIST_FLAG,
             courseId,

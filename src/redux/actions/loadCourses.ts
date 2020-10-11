@@ -5,8 +5,6 @@ import { actionTypes } from "../../actionTypes";
 export const loadCourses = (dispatch): void => {
     setTimeout(() => {
         const { courseList } = initialCourseListObject;
-        console.log("got inititial data");
-        console.log(courseList);
 
         dispatch({
             type: actionTypes.STORE_DATA,
@@ -16,5 +14,5 @@ export const loadCourses = (dispatch): void => {
             type: actionTypes.SET_LOADING_STATE,
             isLoadingData: false,
         });
-    }, 3000);
+    }, 30);
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Course } from "./Course";
-import { Grid, List, ListItem, Typography } from "@material-ui/core";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { Grid, Typography } from "@material-ui/core";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 
 import { LoadingIndicator } from "./components/LoadingIndicator";
 
@@ -12,7 +12,7 @@ type courseListElementType = {
     isLoading: boolean;
 };
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
     createStyles({
         gridWrapper: {
             flexGrow: 1,
@@ -47,14 +47,6 @@ export const CourseList: React.FC<courseListElementType> = ({
                         )}
                     </Grid>
                 </div>
-
-                <Typography variant="h2">TODOs</Typography>
-                <List>
-                    <ListItem>
-                        UI - more prettier (box-model, hovers, paper styles)
-                    </ListItem>
-                    <ListItem>configure material UI</ListItem>
-                </List>
             </>
         );
     }

@@ -1,8 +1,21 @@
 ## Things I wouldve changed with more time put into the project
 
 * Thunks: I dont think I'm using the thunk action call correctly. Definitely would've checked that out again and cleaned it up.
-* Theming: Create a nice theme and refine the styling
+* Redux/Container structure: The structure with directly calling dispatch(function) vs dispatch({actionData}) is not clean.
+* Theming: refine the theme a little bit
 
+## What I didnt do
+* I didnt use any Component rendering tests. I belive that E2E tests cover this purpose a lot better, and that most rendering test are simply a replication of the output of the component. So the approach moves towards snapshot testing, which only add a redundant file to change when adjusting the component, basically a way of checking if the developer really meant to change that file. (one exception in this repo wouldve been worth a test: the click functionality on the ToggleWishlistButton)
+* a backend. I use async file loading and Redux-thunk to simulate this, switching to an actual API should only require small changes (syncing store to backend)
+* a customized theme. without knowing more about the usage background, it wouldnt make sense to adjust the theme to fit a specific corporate identity or other requirements
+* cleanly separated commits: since i am the only person ever working on this, there is no need for commits that can be rolled back, so i saved myself the overhead of doing that
+
+## What I did
+* Project setup with typescript + eslint + prettier + editorconfig setup out of create react app
+* react UI using material UI
+* redux state management
+* async initial data loading using redux thunk
+* cypress testing of implemented functionalities
 
 =======
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

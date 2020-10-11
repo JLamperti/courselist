@@ -6,7 +6,7 @@ import { loadCourses } from "../redux/actions/loadCourses";
 
 type CourseListContainerType = {};
 
-const useLoadDataOnFirstRender = (dispatch) => {
+const useLoadDataOnFirstRender = (dispatch): void => {
     useEffect(() => {
         loadCourses(dispatch);
     }, []);
