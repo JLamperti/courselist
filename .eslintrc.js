@@ -5,13 +5,14 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: [
       '@typescript-eslint',
-      "react"
+      "react",
     ],
     extends: [
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
       "plugin:prettier/recommended",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:cypress/recommended"
     ],
     rules: {
         "react/prop-types": "off",
@@ -20,5 +21,6 @@ module.exports = {
         "browser": true,
         "node": true,
         "es6": true,
+        "jest": true,
     }
   };

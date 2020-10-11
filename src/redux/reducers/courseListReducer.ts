@@ -19,7 +19,6 @@ export const courseListReducer = (
 ): courseListType => {
     switch (action.type) {
         case actionTypes.STORE_DATA: {
-            console.log("storing data");
             return action.courseList;
         }
         case actionTypes.TOGGLE_WISHLIST_FLAG: {

@@ -20,14 +20,22 @@ const stateDataMock = ({ course1WishlistStatus = false }): courseListType => [
 ];
 
 describe("data manipulator action test: toggle wishlist", () => {
-    it("should throw when not receiving a courseId", () => {
-        expect(() => setWishlistFlag({ state: stateDataMock({}) })).toThrow();
-    });
-    it("should change the wishlist state of the course with the provided id", () => {
+    it("should activate the wishlist state of the course with the provided id", () => {
         const expected = stateDataMock({ course1WishlistStatus: true });
         const actual = setWishlistFlag({
-            state: stateDataMock({}),
+            courseList: stateDataMock({}),
             courseId: 1,
+            isCourseWishedFor: true,
         });
+        expect(actual).toEqual(expected);
+    });
+    it("should deactivate the wishlist state of the course with the provided id", () => {
+        const expected = stateDataMock({ course1WishlistStatus: false });
+        const actual = setWishlistFlag({
+            courseList: stateDataMock({ course1WishlistStatus: true }),
+            courseId: 1,
+            isCourseWishedFor: false,
+        });
+        expect(actual).toEqual(expected);
     });
 });

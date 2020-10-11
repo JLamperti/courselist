@@ -18,6 +18,7 @@ export const ToggleWishlistButton: React.FC<ToggleWishlistButtonType> = ({
 }) => {
     const dispatch = useDispatch();
     const toggleWishlist = (): void => {
+        console.log(`wlf: ${wishlistFlag}, id: ${courseId}`);
         dispatch({
             type: actionTypes.TOGGLE_WISHLIST_FLAG,
             courseId,
@@ -25,11 +26,19 @@ export const ToggleWishlistButton: React.FC<ToggleWishlistButtonType> = ({
         });
     };
     return wishlistFlag ? (
-        <IconButton onClick={toggleWishlist} aria-label="remove from wishlist">
+        <IconButton
+            onClick={toggleWishlist}
+            aria-label="remove from wishlist"
+            data-cy="button-unwishlist"
+        >
             <FavoriteBorderIcon fontSize="large" />
         </IconButton>
     ) : (
-        <IconButton onClick={toggleWishlist} aria-label="add to wishlist">
+        <IconButton
+            onClick={toggleWishlist}
+            aria-label="add to wishlist"
+            data-cy="button-wishlist"
+        >
             <FavoriteIcon color="secondary" fontSize="large" />
         </IconButton>
     );

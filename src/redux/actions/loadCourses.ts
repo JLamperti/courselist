@@ -16,5 +16,5 @@ export const loadCourses = (dispatch): void => {
             type: actionTypes.SET_LOADING_STATE,
             isLoadingData: false,
         });
-    }, 5);
+    }, 3000);
 };

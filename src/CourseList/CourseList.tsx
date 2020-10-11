@@ -50,10 +50,9 @@ export const CourseList: React.FC<courseListElementType> = ({
 
                 <Typography variant="h2">TODOs</Typography>
                 <List>
-                    <ListItem>UI - more prettier</ListItem>
-                    <ListItem>UI - toggle icon</ListItem>
-                    <ListItem>test - fix wishlist toggle</ListItem>
-                    <ListItem>E2E wishlisting</ListItem>
+                    <ListItem>
+                        UI - more prettier (box-model, hovers, paper styles)
+                    </ListItem>
                     <ListItem>configure material UI</ListItem>
                 </List>
             </>

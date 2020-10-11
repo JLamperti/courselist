@@ -3,32 +3,32 @@
       {
           "courseId": 0,
           "courseName": "Erste Cavaletti-Übungen für das 4-jährigen Pferdes",
-          "wistlistFlag": false
+          "wishlistFlag": false
       },
       {
           "courseId": 1,
           "courseName": "Erste Ausbildung für das 3-jährige Pferdes",
-          "wistlistFlag": false
+          "wishlistFlag": false
       },
        {
           "courseId": 2,
           "courseName": "Handarbeit in der klassischen Ausbildung’",
-          "wistlistFlag": true
+          "wishlistFlag": true
       },
        {
           "courseId": 3,
           "courseName": "Erste Ausbildung für das 3-jährige Pferdes",
-          "wistlistFlag": false
+          "wishlistFlag": false
       },
        {
           "courseId": 4,
           "courseName": "Besser Reiten durch Yoga",
-          "wistlistFlag": true
+          "wishlistFlag": true
       },
        {
           "courseId": 5,
           "courseName": "Ausbildungsjahr mit fliegendem Wechsel, Piaffe und Passage",
-          "wistlistFlag": true
+          "wishlistFlag": true
       }
   ]
 }

@@ -9,6 +9,9 @@ export const setWishlistFlag = ({
     courseId?: number;
     isCourseWishedFor: boolean;
 }): courseListType => {
+    console.log(
+        `setting wishlist flag for ${toggledCourseId} to ${isCourseWishedFor}`
+    );
     return courseList.map(({ courseId, wishlistFlag, ...restProps }) => {
         return {
             ...restProps,
